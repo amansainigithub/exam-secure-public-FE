@@ -1,6 +1,9 @@
-<div id="app">
-  <nav class="navbar navbar-expand navbar-dark" style="background-color: #F08080;">
-    <a routerLink="/" class="navbar-brand">EXAM-SECURE P</a>
+<div id="app" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+  <nav class="navbar navbar-expand navbar-dark" style="background-color: white;">
+    <a routerLink="/" class="navbar-brand">
+      <i class="bi bi-book-half gnColor code1001"></i>
+      <span class="code1002 gnColor">EXAM-SECURE P</span>
+    </a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <!-- <li class="nav-item">
         <a href="/" class="nav-link" routerLink="home">Home </a>
@@ -8,11 +11,23 @@
     </ul>
 
     <ul class="navbar-nav ml-auto" *ngIf="!tokenStorageService.isLoggedIn()">
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
       </li>
       <li class="nav-item">
         <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li> -->
+      <li>
+        <button   routerLink="login"   routerLink="register" class="button button2">
+          <i class="bi bi-person-plus"></i>
+          Sign Up
+        </button>
+      </li>
+      <li>
+        <button   routerLink="login" class="button button1">
+          <i class="bi bi-lock-fill"></i>
+          Login
+        </button>
       </li>
     </ul>
 
@@ -20,13 +35,23 @@
       <!-- <li class="nav-item">
         <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
       </li> -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a href class="nav-link" (click)="logout()">LogOut</a>
-      </li>
+      </li> -->
+      <button (click)="logout()" class="button button3">
+        Logout
+      </button>
     </ul>
   </nav>
+</div>
 
+
+
+<!-- //CONTAINER -->
   <div class="container">
+    <ngx-ui-loader></ngx-ui-loader>
+  </div>
+
+  <div ngxUiLoaderBlurred>
     <router-outlet></router-outlet>
   </div>
-</div>

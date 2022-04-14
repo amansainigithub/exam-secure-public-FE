@@ -1,0 +1,43 @@
+.code200
+{
+    font-size: 40px;
+    color: #2E4053;
+    line-height: normal;
+    font-weight: 700;
+   
+}
+
+.code201
+{
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+
+ .btn {
+    flex: 1 1 auto;
+    margin: 18px;
+    padding: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    font-weight: 600;
+    color: white;
+   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+   }
+  
+  .btn:hover {
+    background-position: right center;
+    color: #2E4053;
+    font-weight: 600;
+  }
+  
+  .btn-1 {
+    background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+  }
+  
+  /* Magic Stuff End -> */

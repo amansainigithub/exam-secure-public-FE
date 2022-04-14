@@ -1,0 +1,70 @@
+.gnColor
+{
+    color: #6495ED;
+}
+
+.code1001
+{
+    font-size: 24px;
+    margin-right: 10px;
+}
+.code1002
+{
+    color: #6495ED;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button1 {
+    background-color: white; 
+    color: #2E4053; 
+    border-radius: 7px;
+    font-weight: 600;
+  }
+  
+  .button1:hover {
+    background-color: #FAE5D3;
+    color: #2E4053;
+    font-weight: 600;
+  }
+
+  .button2 {
+    background-color: white; 
+    color: #2E4053; 
+    border-radius: 7px;
+    font-weight: 600;
+  }
+  
+  .button2:hover {
+    background-color: #D6EAF8;
+    color: #2E4053;
+    font-weight: 600;
+  }
+
+  .button3 {
+    background-color: white; 
+    color: #2E4053; 
+    border-radius: 7px;
+    font-weight: 600;
+  }
+  
+  .button3:hover {
+    background-color: #FADBD8;
+    color: #2E4053;
+    font-weight: 600;
+  }

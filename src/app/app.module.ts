@@ -15,6 +15,8 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { HomeComponent } from './pages/home/home.component';
 import { TestingComponent } from './pages/dashboard/testing/testing.component';
 import { DashboardUserComponent } from './pages/dashboard/dashboard-user/dashboard-user.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
 
 @NgModule({
   declarations: [
@@ -33,7 +35,12 @@ import { DashboardUserComponent } from './pages/dashboard/dashboard-user/dashboa
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NgxUiLoaderModule, // import NgxUiLoaderModule
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true,
+    })// import NgxUiLoaderHttpModule. By default, it will show background loader.
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
