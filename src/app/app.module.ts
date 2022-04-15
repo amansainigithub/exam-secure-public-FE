@@ -17,6 +17,10 @@ import { TestingComponent } from './pages/dashboard/testing/testing.component';
 import { DashboardUserComponent } from './pages/dashboard/dashboard-user/dashboard-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
+import { FooterComponent } from './components/footer/footer.component';
+import { ChapterComponent } from './pages/categoryPages/chapters/chapter/chapter.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -29,13 +33,17 @@ import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from "ngx-ui-loader";
     BoardUserComponent,
     HomeComponent,
     TestingComponent,
-    DashboardUserComponent
+    DashboardUserComponent,
+    FooterComponent,
+    ChapterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    MatExpansionModule,
+    MatButtonModule,
     BrowserAnimationsModule,
     NgxUiLoaderModule, // import NgxUiLoaderModule
     NgxUiLoaderHttpModule.forRoot({

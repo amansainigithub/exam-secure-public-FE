@@ -1,0 +1,51 @@
+
+<!-- START CONTAINER 1   -->
+<div class="container">
+
+    <button class="button mt-5">
+        <i class="bi bi-book-half textBookColor"></i>
+        <span class="code300"><b> QUESTIONS SET</b></span>
+      </button>
+    
+    <div class="row">
+
+        <div class="col-md-4" *ngFor="let node of chapterListByStatus; let i = index" >
+
+            <div class="mt-5">
+                <mat-accordion >
+                    <mat-expansion-panel  (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                           <i class="bi bi-journal-bookmark-fill mr-3 code1003"  [style.color]="node.bgColor"></i>
+                           <p  class="code1001">
+                            {{node.chapterName}}
+                           </p>
+                        </mat-panel-title>
+                        <mat-panel-description>
+                         
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <div  class="mt-2" *ngFor="let node2 of node.questionSetsModels; let i = index">
+                             <!-- <p >
+                            <a href="" class="a_code_1005 text-center">
+                               {{i+1}})  {{node2.questionSetName}}
+                            </a>
+                           </p> -->
+                           <button mat-stroked-button style="width: 100%;" >
+                            <b>{{i+1}})</b>  {{node2.questionSetName}}
+                           </button>
+                      </div>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- END CONTAINER 1   -->
+
+
+  

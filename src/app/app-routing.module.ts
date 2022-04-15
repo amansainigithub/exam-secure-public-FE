@@ -11,6 +11,7 @@ import { AuthguardGuard } from './authGuard/authguard.guard';
 import { HomeComponent } from './pages/home/home.component';
 import { TestingComponent } from './pages/dashboard/testing/testing.component';
 import { DashboardUserComponent } from './pages/dashboard/dashboard-user/dashboard-user.component';
+import { ChapterComponent } from './pages/categoryPages/chapters/chapter/chapter.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
+  { path: 'chapters/:branchName/:branchId', component: ChapterComponent },
   { path: 'dashboard',canActivate:[AuthguardGuard],
         children: [
         { path: '', component: DashboardUserComponent} ,

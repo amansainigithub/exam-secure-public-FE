@@ -23,7 +23,7 @@
                </div>
 
                <div class="mt-4">
-                <button class="btn btn-1">LETS START THE QUIZ</button>
+                <button class="btn btn-1"> LET's START THE QUIZ</button> 
                </div>
                
         </div>
@@ -36,3 +36,192 @@
     </div>
 
 </div>
+
+
+<div class="container marginTop70">
+
+    <button class="button">
+        <i class="bi bi-book-half textBookColor"></i>
+        <span class="code300"> QUIZ CATEGORY </span>
+      </button>
+
+
+      <!-- FETCH CATEGORY START -->
+      <div class="row">
+        <div class="col-md-3 mt-4" *ngFor="let node of branchList; let i = index">
+            <div [style.background-color]="node.bgColor" style="border-radius: 10px;" class="text-center" *ngIf="node.status == true">
+                <div class="card-body p-0 pt-3">
+                    <h5 class="card-title">
+                        <!-- <span>
+                            <img src="{{node.fileUrl}}" height="30" width="30" style="border-radius: 50%;font-weight: 600;" alt="">
+                        </span> -->
+                        <span class="code400">
+                            {{node.branchName}}
+                        </span>
+                    </h5>
+                </div>
+
+                <div>
+                    <a [routerLink]="'/chapters/'+node.branchName+'/'+node.id">
+                    <button class="buttonforSet">
+                        <span> 
+                                Select Quiz 
+                        </span>
+                    </button>
+                </a>
+                </div>
+
+                <div>
+                    <i class="bi bi-arrow-left-circle-fill" [ngStyle]="{ color: node.bgColor }" ></i>
+                </div>
+
+              </div>
+        </div>
+      </div>
+       <!-- FETCH CATEGORY END -->
+
+
+      <!-- MORE CATEGORY START-->
+       <div class="mt-5">
+           
+        <div class="text-center">
+            <button class="buttonMoreCategory">
+                <i class="bi bi-book-half textBookColor2"></i>
+                <span class="code300"> MORE CATEGORY </span>
+            </button>
+        </div>
+
+          <!-- FETCH SUB CATEGORY START -->
+      <div class="row">
+        <div class="col-md-3 mt-4" *ngFor="let node of subCategoryList; let i = index">
+            <div [style.background-color]="node.bgColor" style="border-radius: 10px;" class="text-center" *ngIf="node.status == true">
+                <div class="card-body p-0 pt-3">
+                    <h5 class="card-title">
+                        <!-- <span>
+                            <img src="{{node.fileUrl}}" height="30" width="30" style="border-radius: 50%;font-weight: 600;" alt="">
+                        </span> -->
+                        <span class="code400">
+                            {{node.subCategoryName}}
+                        </span>
+                    </h5>
+                </div>
+
+                <div>
+                    <button class="buttonforSet">
+                        <span>Select branch </span>
+                    </button>
+                </div>
+
+                <div>
+                    <i class="bi bi-arrow-left-circle-fill" [ngStyle]="{ color: node.bgColor }" ></i>
+                </div>
+
+              </div>
+        </div>
+      </div>
+       <!-- FETCH SUB CATEGORY END -->
+  
+
+       </div>
+       <!-- MORE CATEGORY ENDING-->
+
+
+</div>
+<!-- ROOT CONTAINER END ! -->
+
+
+<!-- SECTION AREA START -->
+    <div class="container-fluid code600 marginTop60">
+
+       <div class="row">
+           <div class="col-md-3">
+           </div>
+
+           <div class="col-md-6 quizThoughtArea">
+                <i class="fa fa-quote-left"></i>
+                        <span class="textArea200">
+                            Our thoughts and preferences about studying say a lot about us as students. Whether it’s 
+                            deciding on a place to study or picking which socialevents to attend outside of class,
+                                you can learn to your.“What type of student are you” student quiz!
+                        </span>
+                <i class="fa fa-quote-right" style="font-size:30px"></i>
+            </div>
+
+        <div class="col-md-3">
+               
+        </div>
+       </div>
+        
+    </div>
+<!-- SECTION AREA END -->
+
+
+<!-- OTHER SECTION 1 START-->
+
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-md-6">
+            <h1 class="section999">
+                Are You Really Ready for Success
+            </h1>
+            <p class="section1000 blockquote">
+                Are you an achievement junkie? Like most entrepreneurs, you may struggle from a
+                common affliction: Never feeling like you're doing enough to achieve your.
+                are always looking for success strategies and want learn from those that 
+                have achieved their goals.
+            </p>
+            
+        </div>
+
+        <div class="col-md-6">
+            <div class="card border-0">
+                <img src="../../../assets/home-page/003.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OTHER SECTION 2 ENDING -->
+
+
+
+<!-- SECTION 2 -->
+<div class="container marginTop70">
+
+    <div class="row px-5">
+
+        <div class="col-md-4">
+            <div class="card p-4 border-0 section2Card" >
+                <h1 class="display-3 ">Supporting</h1>
+                <p class="card-text">
+                    With supporting text below as a natural lead-in to additional content
+                    grid classes, grid Sass mixins, or utilities.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+                <div class="card p-4 border-0 section2Card" >
+                    <h1 class="display-3 ">Spectrum </h1>
+                    <p class="card-text">
+                        With supporting text below as a natural lead-in to additional content
+                        grid classes, grid Sass mixins, or utilities.
+                    </p>
+                </div>
+        </div>
+
+        <div class="col-md-4">
+                <div class="card p-4 border-0 section2Card" >
+                    <h1 class="display-3 ">Material </h1>
+                    <p class="card-text">
+                        With supporting text below as a natural lead-in to additional content
+                        grid classes, grid Sass mixins, or utilities.
+                    </p>
+                </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- SECTION 2    -->
