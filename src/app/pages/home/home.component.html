@@ -107,9 +107,13 @@
                 </div>
 
                 <div>
-                    <button class="buttonforSet">
-                        <span>Select branch </span>
-                    </button>
+                    <a [routerLink]="'/category/'+node.subCategoryName+'/'+node.id">
+                        <button class="buttonforSet">
+                            <span> 
+                                    Select Quiz 
+                            </span>
+                        </button>
+                    </a>
                 </div>
 
                 <div>

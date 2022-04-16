@@ -12,6 +12,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { TestingComponent } from './pages/dashboard/testing/testing.component';
 import { DashboardUserComponent } from './pages/dashboard/dashboard-user/dashboard-user.component';
 import { ChapterComponent } from './pages/categoryPages/chapters/chapter/chapter.component';
+import { BottomCategoryComponent } from './pages/categoryPages/bottom/bottom-category/bottom-category.component';
+import { BranchComponent } from './pages/categoryPages/branch/branch/branch.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'chapters/:branchName/:branchId', component: ChapterComponent },
+  { path: 'category/:subCategoryName/:subCategoryId', component: BottomCategoryComponent },
+  { path: 'branch/:bottomCategoryName/:bottomCategoryId', component: BranchComponent },
   { path: 'dashboard',canActivate:[AuthguardGuard],
         children: [
         { path: '', component: DashboardUserComponent} ,

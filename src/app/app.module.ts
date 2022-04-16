@@ -21,6 +21,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ChapterComponent } from './pages/categoryPages/chapters/chapter/chapter.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
+import { BottomCategoryComponent } from './pages/categoryPages/bottom/bottom-category/bottom-category.component';
+import { BranchComponent } from './pages/categoryPages/branch/branch/branch.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import {MatButtonModule} from '@angular/material/button';
     TestingComponent,
     DashboardUserComponent,
     FooterComponent,
-    ChapterComponent
+    ChapterComponent,
+    BottomCategoryComponent,
+    BranchComponent,
   ],
   imports: [
     BrowserModule,
