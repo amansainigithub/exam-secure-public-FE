@@ -1,0 +1,75 @@
+<div class="container marginTop60">
+
+    <mat-card class="example-card" >
+
+        <mat-card-title style="background-color: #FDF2E9;padding: 10px;border-radius: 15px;">
+            {{questionSetName}}
+        </mat-card-title>
+
+        <mat-card-content  *ngFor="let node of quiz; let i = index">
+            <mat-card>
+
+                <b>{{ i+1 }} ) {{node.question}} </b>
+                <br>
+
+
+              
+                    <div class="mt-4">
+                        <mat-radio-group aria-label="Select an option">
+                            <div class="row">
+                                <div class="col-md-5">
+                                        <mat-radio-button [value]="node.option1" > {{node.option1}}</mat-radio-button>
+                                </div>
+                                <div class="col-md-5">
+                                        <mat-radio-button [value]="node.option2" > {{node.option2}}</mat-radio-button>
+                                </div>
+                            </div>
+    
+                            <div class="row mt-2">
+                                <div class="col-md-5">
+                                    <mat-radio-button [value]="node.option3" > {{node.option3}}</mat-radio-button>
+                                </div>
+                                <div class="col-md-5">
+                                        <mat-radio-button [value]="node.option4"  > {{node.option4}}</mat-radio-button>
+                                </div>
+                            </div>
+                            
+                        </mat-radio-group>
+                    </div>
+                
+
+                <!-- <div class="form-row ml-4 mt-3">
+                    <div class="col-md-5 mb-3">
+                        <input class="form-check-input" type="radio" [value]="node.option1"  [name]="i" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                           {{node.option1}}
+                            </label>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <input class="form-check-input" type="radio"  value="node.option1" [name]="i" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                {{node.option2}}
+                            </label>
+                    </div>
+                </div>
+                <div class="form-row ml-4 mt-2">
+                    <div class="col-md-5 mb-3">
+                        <input class="form-check-input" type="radio" value="node.option1" [name]="i" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                {{node.option3}}
+                            </label>
+                      </div>
+                      <div class="col-md-5 mb-3">
+                        <input class="form-check-input" type="radio"value="node.option1" [name]="i" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                {{node.option4}}
+                            </label>
+                      </div>
+                    </div> -->
+            </mat-card>
+        </mat-card-content>
+
+
+      </mat-card>
+
+</div>

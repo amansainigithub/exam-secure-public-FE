@@ -43,3 +43,21 @@ margin-top: 70px;
 {
 margin-top: 80px;
 }
+
+.center{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+  }
+
+
+  .basicPurple
+  {
+    color: #7C81E3;
+  }
+
+  .basicPurpleDark
+  {
+    color: #686FF5;
+  }

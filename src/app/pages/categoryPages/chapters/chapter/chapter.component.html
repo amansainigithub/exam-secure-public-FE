@@ -13,28 +13,60 @@
 
             <div class="mt-5">
                 <mat-accordion >
+
                     <mat-expansion-panel  (opened)="panelOpenState = true"
                                          (closed)="panelOpenState = false">
                       <mat-expansion-panel-header>
+
                         <mat-panel-title>
                            <i class="bi bi-journal-bookmark-fill mr-3 code1003"  [style.color]="node.bgColor"></i>
                            <p  class="code1001">
                             {{node.chapterName}}
                            </p>
                         </mat-panel-title>
+
                         <mat-panel-description>
-                         
                         </mat-panel-description>
+
                       </mat-expansion-panel-header>
+
                       <div  class="mt-2" *ngFor="let node2 of node.questionSetsModels; let i = index">
-                             <!-- <p >
-                            <a href="" class="a_code_1005 text-center">
-                               {{i+1}})  {{node2.questionSetName}}
-                            </a>
-                           </p> -->
-                           <button mat-stroked-button style="width: 100%;" >
-                            <b>{{i+1}})</b>  {{node2.questionSetName}}
-                           </button>
+
+                        <div class="cards">
+
+                          <a  style="text-decoration: none;cursor: pointer;"   >  
+
+                            <mat-card class="example-card">
+
+                              <b>
+                               <span  color="primary"> {{i+1}}) </span>
+                                <span class="ml-2">
+                                  {{node2.questionSetName}}
+                                </span>
+                              </b>  
+
+                              <mat-card-actions class="text-center">
+                                <button  mat-stroked-button color="primary">
+                                  <b class="mr-2"  color="primary">Q</b>
+                                    <span class="text-dark">
+                                      {{ node2.questionsAnswerModel.length}}
+                                    </span>
+                                </button>
+
+                                <a [routerLink]="'/instructions/'+node2.questionSetName+'/'+node2.id"  mat-stroked-button color="primary">
+                                  START
+                                </a>
+
+                                <button  mat-stroked-button color="primary">
+                                  WATCH
+                              </button>
+                              </mat-card-actions>
+
+                            </mat-card>
+                          </a>
+
+                        </div>
+
                       </div>
                     </mat-expansion-panel>
                   </mat-accordion>

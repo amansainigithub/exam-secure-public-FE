@@ -14,9 +14,13 @@ import { DashboardUserComponent } from './pages/dashboard/dashboard-user/dashboa
 import { ChapterComponent } from './pages/categoryPages/chapters/chapter/chapter.component';
 import { BottomCategoryComponent } from './pages/categoryPages/bottom/bottom-category/bottom-category.component';
 import { BranchComponent } from './pages/categoryPages/branch/branch/branch.component';
+import { DemoComponent } from './pages/categoryPages/test/demo/demo.component';
+import { InstructionsComponent } from './pages/instructions/instructions/instructions.component';
+import { QuizComponent } from './pages/quiz/quiz/quiz.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'demo', component: DemoComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
@@ -26,6 +30,9 @@ const routes: Routes = [
   { path: 'chapters/:branchName/:branchId', component: ChapterComponent },
   { path: 'category/:subCategoryName/:subCategoryId', component: BottomCategoryComponent },
   { path: 'branch/:bottomCategoryName/:bottomCategoryId', component: BranchComponent },
+  { path: 'instructions/:questionSetName/:id', component: InstructionsComponent },
+  { path: 'quiz/:questionSetName/:id', component: QuizComponent },
+
   { path: 'dashboard',canActivate:[AuthguardGuard],
         children: [
         { path: '', component: DashboardUserComponent} ,

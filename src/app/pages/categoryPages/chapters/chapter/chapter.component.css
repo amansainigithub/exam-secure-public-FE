@@ -2,7 +2,7 @@
 {
     color: #34495E;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -41,3 +41,15 @@ transition:  0.6s;
     border-radius: 7px;
     border-left: 4px solid #E67E22; /* Green */
   }
+
+  .cards {
+    transition: all 0.2s ease;
+    border-radius: 15px;
+    cursor: pointer
+}
+.cards:hover {
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-top: 4px solid #7C81E3; /* Green */
+    border-radius: 15px;
+    transform: scale(1.02)
+}

@@ -23,6 +23,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import { BottomCategoryComponent } from './pages/categoryPages/bottom/bottom-category/bottom-category.component';
 import { BranchComponent } from './pages/categoryPages/branch/branch/branch.component';
+import { DemoComponent } from './pages/categoryPages/test/demo/demo.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
+import { InstructionsComponent } from './pages/instructions/instructions/instructions.component';
+import { QuizComponent } from './pages/quiz/quiz/quiz.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -40,6 +46,9 @@ import { BranchComponent } from './pages/categoryPages/branch/branch/branch.comp
     ChapterComponent,
     BottomCategoryComponent,
     BranchComponent,
+    DemoComponent,
+    InstructionsComponent,
+    QuizComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +57,10 @@ import { BranchComponent } from './pages/categoryPages/branch/branch/branch.comp
     HttpClientModule,
     MatExpansionModule,
     MatButtonModule,
+    MatCardModule,
     BrowserAnimationsModule,
+    MatRadioModule,
+    MatSnackBarModule,
     NgxUiLoaderModule, // import NgxUiLoaderModule
     NgxUiLoaderHttpModule.forRoot({
       showForeground:true,

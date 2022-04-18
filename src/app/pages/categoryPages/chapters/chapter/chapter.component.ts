@@ -14,7 +14,13 @@ export class ChapterComponent implements OnInit {
   constructor(
     private _activateRouter:ActivatedRoute,
     private _chapter:ChapterService,
-    private router:Router) { }
+    private router:Router) {
+
+      //SCROLL TO (0,0) AXIS POINT
+    this.router.events.subscribe((event) => {
+      window.scrollTo(0, 0)
+  });
+     }
 
   branchName:any;
   branchId:any;
