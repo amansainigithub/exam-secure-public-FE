@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionAnswerService } from 'src/app/_services/categoryServices/question-answer-service/question-answer.service';
+import { QuizService } from 'src/app/_services/categoryServices/quiz-service/quiz.service';
 
 @Component({
   selector: 'app-quiz',
@@ -12,19 +13,21 @@ export class QuizComponent implements OnInit {
   constructor(
     private _router:ActivatedRoute,
     private rt:Router,
+    private quizService:QuizService,
     private _qas:QuestionAnswerService) {
-     //SCROLL TO (0,0) AXIS POINT
-     this.rt.events.subscribe((event) => {
-      window.scrollTo(0, 0)
-  });
    }
 
    id:any;
    questionSetName:any;
   ngOnInit(): void {
+
+    //DISABLED BACK BUTTON
+      this.disabledBackButton();
+
     this.questionSetName =  this._router.snapshot.params.questionSetName;
     this.id =  this._router.snapshot.params.id;
     this.getQuestionAnswerListByQuestionSetIdPublic_RC();
+ 
   }
 
   quiz:any;
@@ -37,4 +40,31 @@ export class QuizComponent implements OnInit {
       console.log(error);
     })
   }
+
+  disabledBackButton()
+  {
+    history.pushState(null, document.title, location.href);
+    window.addEventListener('popstate', function (event)
+    {
+      history.pushState(null, document.title, location.href);
+    });
+  }
+
+  //SUBMIT QUIZ
+  submitQuiz()
+  {
+    console.log("SUBMIT QUIZ....");
+    this.quizService.submitQuiz(this.quiz).subscribe((data:any)=>{
+      console.log(data);
+    },(error)=>{
+      console.log(error);
+    })
+    
+  }
+
+
+
+
+
+  
 }
