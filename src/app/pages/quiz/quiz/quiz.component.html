@@ -1,3 +1,4 @@
+
 <div class="container marginTop60">
 
     <mat-card class="example-card" >
@@ -12,12 +13,24 @@
             <mat-card>
 
                 <b>{{ i+1 }} ) {{node.question}} </b>
+
+               <div *ngIf="node.questionFiles != ''">
+                    <div *ngFor="let qf of node.questionFiles; let i = index">
+                        <span>{{qf.fileUrl}}</span>
+                    </div>
+               </div>
+
+               <div *ngIf="node.questionFiles == ''">
+                   <span>EMPTY</span>
+                   <span>{{node.questionFiles}}</span>
+               </div>
                 <br>
                 <hr>
                 
                     <div>
                         <div class="row">
                             <div class="col-md-6">
+                                <b class="mr-2">a) </b>
                                 <input 
                                     type="radio" 
                                     [value] = "node.option1"  
@@ -27,6 +40,7 @@
                             </div>
             
                             <div class="col-md-6">
+                                <b class="mr-2">b) </b>
                                 <input 
                                     type="radio" 
                                     [value] = "node.option2"  
@@ -38,6 +52,7 @@
             
                         <div class="row mt-3">
                             <div class="col-md-6">
+                                <b class="mr-2">c) </b>
                                 <input 
                                     type="radio" 
                                     [value] = "node.option3"  
@@ -47,6 +62,7 @@
                             </div>
             
                             <div class="col-md-6">
+                                <b class="mr-2">d) </b>
                                 <input 
                                     type="radio" 
                                     [value] = "node.option4"  
@@ -65,6 +81,17 @@
                 SUBMIT QUIZ
             </button>
         </mat-card-actions>
+
+        <div class="card border border-1">
+                <p>
+                  <b>ATTEMPT QUESTIONS : </b> {{result.attemptQuestions}} <br>
+                  <b>CORRECT ANSWER : </b> {{result.correctAnswer}} <br>
+                  <b>ATTEMPT QUESTIONS : </b> {{result.attemptQuestions}} <br>
+                  <b>PERCENTAGE : </b> {{result.percentage}} <br>
+                  <b>TOTAL QUESTIONS : </b> {{result.totalQuestion}} <br>
+                  <b>WRONG ANSWERS : </b> {{result.wrongAnswer}} <br>
+                </p>
+        </div>
 
 
       </mat-card>

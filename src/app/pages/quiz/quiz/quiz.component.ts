@@ -34,6 +34,7 @@ export class QuizComponent implements OnInit {
   getQuestionAnswerListByQuestionSetIdPublic_RC()
   {
     this._qas.getQuestionAnswerListByQuestionSetIdPublic_RC(this.id).subscribe(data=>{
+      console.log("**********************");
       console.log(data);
       this.quiz = data;
     },error=>{
@@ -51,10 +52,12 @@ export class QuizComponent implements OnInit {
   }
 
   //SUBMIT QUIZ
+  result:any={};
   submitQuiz()
   {
-    console.log("SUBMIT QUIZ....");
+    //console.log("SUBMIT QUIZ....");
     this.quizService.submitQuiz(this.quiz).subscribe((data:any)=>{
+      this.result = data
       console.log(data);
     },(error)=>{
       console.log(error);
