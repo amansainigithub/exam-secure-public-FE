@@ -29,6 +29,8 @@ import {MatCardModule} from '@angular/material/card';
 import { InstructionsComponent } from './pages/instructions/instructions/instructions.component';
 import { QuizComponent } from './pages/quiz/quiz/quiz.component';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [
@@ -61,6 +63,7 @@ import {MatRadioModule} from '@angular/material/radio';
     BrowserAnimationsModule,
     MatRadioModule,
     MatSnackBarModule,
+    MatProgressSpinnerModule,
     NgxUiLoaderModule, // import NgxUiLoaderModule
     NgxUiLoaderHttpModule.forRoot({
       showForeground:true,
