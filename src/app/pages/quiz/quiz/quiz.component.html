@@ -12,111 +12,252 @@
 </mat-spinner> <p>{{timeLeft}} Seconds</p> -->
 
 
-<div class="container marginTop60">
-
-  
-
-
-    <mat-card class="example-card" >
-
-        <div class="container" style="position: absolute;">
-            <div class="font-weight-bold div788 ">
-                <h1 class="code998" >
-                    {{display }} Sec</h1>
-            </div> 
-        </div>
-
-        <mat-card-title class="code546">
-            <span>
-                {{questionSetName}}
-            </span>
-        </mat-card-title>
-
-        <mat-card-content class="p-4" *ngFor="let node of quiz; let i = index">
-            <mat-card>
-
-                <b>{{ i+1 }} ) {{node.question}} </b>
-
-               <div *ngIf="node.questionFiles != ''">
-                    <div *ngFor="let qf of node.questionFiles; let i = index">
-                        <span>{{qf.fileUrl}}</span>
-                    </div>
-               </div>
-
-               <div *ngIf="node.questionFiles == ''">
-                   <span>EMPTY</span>
-                   <span>{{node.questionFiles}}</span>
-               </div>
-                <br>
-                <hr>
+<div *ngIf="isSubmit == false">
+    <div  class="container pt-3 cont7788">
+        <section class="div788">
+            <h1 class="code998" >
+                {{display }} Sec</h1>
+            </section> 
+    </div>
+    
+    
+    <div class="container">
+    
+    
+        <mat-card class="example-card" >
+    
+            <mat-card-title class="code546">
+                <span>
+                    {{questionSetName}}
+                </span>
+            </mat-card-title>
+    
+            <mat-card-content class="p-4" *ngFor="let node of quiz; let i = index">
+                <mat-card>
+    
+                    <b>{{ i+1 }} ) {{node.question}} </b>
+    
+                   <div *ngIf="node.questionFiles != ''">
+                        <div *ngFor="let qf of node.questionFiles; let i = index">
+                            <span>{{qf.fileUrl}}</span>
+                        </div>
+                   </div>
+    
+                   <div *ngIf="node.questionFiles == ''">
+                       <span>EMPTY</span>
+                       <span>{{node.questionFiles}}</span>
+                   </div>
+                    <br>
+                    <hr>
+                    
+                        <div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <b class="mr-2">a) </b>
+                                    <input 
+                                        type="radio" 
+                                        [value] = "node.option1"  
+                                        [(ngModel)] = "node.givenAnswer"  
+                                        [name] = "i.toString()">
+                                        {{node.option1}} 
+                                </div>
                 
-                    <div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <b class="mr-2">a) </b>
-                                <input 
-                                    type="radio" 
-                                    [value] = "node.option1"  
-                                    [(ngModel)] = "node.givenAnswer"  
-                                    [name] = "i.toString()">
-                                    {{node.option1}} 
+                                <div class="col-md-6">
+                                    <b class="mr-2">b) </b>
+                                    <input 
+                                        type="radio" 
+                                        [value] = "node.option2"  
+                                        [(ngModel)] = "node.givenAnswer"  
+                                        [name] = "i.toString()">
+                                        {{node.option2}} 
+                                </div>
                             </div>
-            
-                            <div class="col-md-6">
-                                <b class="mr-2">b) </b>
-                                <input 
-                                    type="radio" 
-                                    [value] = "node.option2"  
-                                    [(ngModel)] = "node.givenAnswer"  
-                                    [name] = "i.toString()">
-                                    {{node.option2}} 
-                            </div>
-                        </div>
-            
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <b class="mr-2">c) </b>
-                                <input 
-                                    type="radio" 
-                                    [value] = "node.option3"  
-                                    [(ngModel)] = "node.givenAnswer"  
-                                    [name] = "i.toString()">
-                                    {{node.option3}} 
-                            </div>
-            
-                            <div class="col-md-6">
-                                <b class="mr-2">d) </b>
-                                <input 
-                                    type="radio" 
-                                    [value] = "node.option4"  
-                                    [(ngModel)] = "node.givenAnswer"  
-                                    [name] = "i.toString()">
-                                    {{node.option3}} 
+                
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <b class="mr-2">c) </b>
+                                    <input 
+                                        type="radio" 
+                                        [value] = "node.option3"  
+                                        [(ngModel)] = "node.givenAnswer"  
+                                        [name] = "i.toString()">
+                                        {{node.option3}} 
+                                </div>
+                
+                                <div class="col-md-6">
+                                    <b class="mr-2">d) </b>
+                                    <input 
+                                        type="radio" 
+                                        [value] = "node.option4"  
+                                        [(ngModel)] = "node.givenAnswer"  
+                                        [name] = "i.toString()">
+                                        {{node.option3}} 
+                                </div>
                             </div>
                         </div>
+    
+                        <!-- SHOW ANSWER START -->
+                       <div class="mt-4">
+                        <mat-accordion>
+                            <mat-expansion-panel (opened)="panelOpenState = true"
+                                                 (closed)="panelOpenState = false">
+                              <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                 <b class="code1233">SHOW ANSWER</b>
+                                </mat-panel-title>
+                              </mat-expansion-panel-header>
+                                  <span class="code0012">
+                                      {{node.ansNameKey}} )
+                                      <span class="code0013">
+                                        {{node.ansKey}}
+                                      </span>
+                                    </span>
+                                    <mat-card class="mt-4 code9990" >
+                                        <mat-card-subtitle>
+                                            <p class="code5512">
+                                                Solutiion
+                                            </p>
+                                            <div class="code88777 e2e-inner-html-bound" [innerHTML]="node.solution | noSanitize">
+                                            </div>
+                                        </mat-card-subtitle>
+                                    </mat-card>
+                            </mat-expansion-panel>
+                          </mat-accordion>
+                       </div>
+                         <!-- SHOW ANSWER ENDING !!! -->
+                          
+    
+                </mat-card>
+            </mat-card-content>
+    
+            <mat-card-actions class="text-center">
+                <button (click)="submitQuiz()" mat-raised-button color="primary">
+                    SUBMIT QUIZ
+                </button>
+            </mat-card-actions>
+    
+          </mat-card>
+    
+    </div>
+</div>
+
+
+
+<!-- SHOWING QUIZ RESULT -->
+<div *ngIf="isSubmit == true" class="container pt-5" >
+
+    <mat-card style="margin: auto;max-width: 680px;">
+        
+        <div class="text-center code3344">
+            <i class="bi bi-book-half f_size_book"></i><br><br>
+            <span class="spanText77">
+                QUIZ RESULT
+            </span>
+        </div>
+
+        <div class="row">
+            <!-- ATTEMPT QUESTIONS -->
+            <div class="col-sm-4  mt-4">
+                <div class="card">
+                        <div class="card-header cardHeadercode1001">
+                            ATTEMPT QUESTIONS
+                        </div>
+                        <div class="card-body textCenter454">
+                            {{result.attemptQuestions}}
+                        </div>
+                  </div>
+            </div>
+
+            <!-- CORRECT ANSWER -->
+            <div class="col-sm-4  mt-4">
+                <div class="card">
+                    <div class="card-header cardHeadercode1001">
+                        CORRECT ANSWER
                     </div>
+                    <div class="card-body textCenter454">
+                        {{result.correctAnswer}}
+                    </div>
+              </div>
+            </div>
 
-            </mat-card>
-        </mat-card-content>
+            <!-- PERCENTAGE -->
+            <div class="col-sm-4  mt-4">
+                <div class="card">
+                    <div class="card-header cardHeadercode1001">
+                        PERCENTAGE
+                    </div>
+                    <div class="card-body textCenter454">
+                        {{result.percentage}} <b>%</b>
+                    </div>
+              </div>
+            </div>
 
-        <mat-card-actions class="text-center">
-            <button (click)="submitQuiz()" mat-raised-button color="primary">
-                SUBMIT QUIZ
-            </button>
-        </mat-card-actions>
+            <!-- TOTAL QUESTIONS -->
+            <div class="col-sm-4  mt-4">
+                <div class="card">
+                    <div class="card-header cardHeadercode1001">
+                        TOTAL QUESTIONS
+                    </div>
+                    <div class="card-body textCenter454">
+                        {{result.totalQuestion}}
+                    </div>
+              </div>
+            </div>
 
-        <div class="card border border-1">
-                <p>
-                  <b>ATTEMPT QUESTIONS : </b> {{result.attemptQuestions}} <br>
-                  <b>CORRECT ANSWER : </b> {{result.correctAnswer}} <br>
-                  <b>ATTEMPT QUESTIONS : </b> {{result.attemptQuestions}} <br>
-                  <b>PERCENTAGE : </b> {{result.percentage}} <br>
-                  <b>TOTAL QUESTIONS : </b> {{result.totalQuestion}} <br>
-                  <b>WRONG ANSWERS : </b> {{result.wrongAnswer}} <br>
-                </p>
+            <!-- WRONG ANSWERS -->
+            <div class="col-sm-4  mt-4">
+                <div class="card">
+                    <div class="card-header cardHeadercode1001">
+                        WRONG ANSWERS
+                    </div>
+                    <div class="card-body textCenter454">
+                        {{result.wrongAnswer}}
+                    </div>
+              </div>
+            </div>
+
+            <!-- TIME DURATION  -->
+            <div class="col-sm-4 mt-4">
+                <div class="card">
+                    <div class="card-header cardHeadercode1001">
+                        TIME DURATION 
+                    </div>
+                    <div class="card-body textCenter454">
+                        {{result.timeDuration}}
+                    </div>
+              </div>
+            </div>
+
         </div>
 
 
-      </mat-card>
+        <!-- MORE OPTIONS -->
+        <hr>
+        <div class="row mt-3">
+            <div class="col-sm-4">
+                <a routerLink="/" mat-raised-button style="background-color: #D4E6F1;">
+                    More Quizes
+                </a>
+            </div>
+
+            <div class="col-sm-4">
+                <a (click)="openDialog()" mat-raised-button style="background-color: #FAE5D3;">
+                   Send Report To Email
+                </a>
+            </div>
+
+            <div class="col-sm-4">
+                <button mat-raised-button style="background-color: #E8DAEF;">
+                   Download Repost PDF
+                </button>
+            </div>
+
+            
+        </div>
+
+    </mat-card>
+
+    
 
 </div>
+<!-- SHOWING QUIZ RESULT ENDING -->

@@ -6,19 +6,100 @@
     text-align: center;
 }
 
-
+.cont7788
+{
+    padding-bottom: 70px;
+}
 .div788
 {
     float: right;
-    padding: 7px;
-    border-radius: 15px;
+    margin-right: 30px;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-top: 2px;
+    border-radius: 10px;
     border-top: 4px solid #7C81E3;
+    background-color: #D6EAF8;
 }
-
 .code998
 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #34495E;
     font-size: 30px;
     font-weight: 600;
+    border-radius: 10px;
+}  
+
+.code1233
+{
+    color: #6495ED;
+    font-weight: 700;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.code0012
+{
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: #283747;
+}
+.code0013
+{
+    color: #5D6D7E;
+}
+
+
+.code5512
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #212F3C;
+}
+
+.code9990
+{
+    background-color: #E8F8F5;
+}
+
+.code88777
+{
+    color: #34495E;
+}
+
+.cardHeadercode1001
+{
+    background-color: #C4D3F7;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.textCenter454
+{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+}
+
+.code3344
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.f_size_book
+{
+    font-size: 15px;
+    color: #3498DB;
+}
+
+.spanText77
+{
+    margin-top: 15px;
+    background-color: whitesmoke;
+    padding: 8px;
+    border-radius: 7px;
+    color: #3E71F1;
 }

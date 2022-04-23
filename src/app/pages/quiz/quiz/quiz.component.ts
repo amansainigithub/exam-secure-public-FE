@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionAnswerService } from 'src/app/_services/categoryServices/question-answer-service/question-answer.service';
 import { QuizService } from 'src/app/_services/categoryServices/quiz-service/quiz.service';
+import { ReportToEmailComponent } from '../report-to-email/report-to-email.component';
+
 
 @Component({
   selector: 'app-quiz',
@@ -14,10 +17,15 @@ export class QuizComponent implements OnInit {
     private _router:ActivatedRoute,
     private rt:Router,
     private quizService:QuizService,
-    private _qas:QuestionAnswerService) {
+    private _qas:QuestionAnswerService,
+    public dialog: MatDialog) {
       //START TIMER
     this.startTimer();
    }
+
+   isSubmit:any=false;
+
+   panelOpenState = false;
 
    id:any;
    questionSetName:any;
@@ -36,14 +44,14 @@ export class QuizComponent implements OnInit {
   getQuestionAnswerListByQuestionSetIdPublic_RC()
   {
     this._qas.getQuestionAnswerListByQuestionSetIdPublic_RC(this.id).subscribe(data=>{
-      console.log("**********************");
-      console.log(data);
+       console.log(data);
       this.quiz = data;
     },error=>{
       console.log(error);
     })
   }
 
+   //DISABLED BACK BUTTON
   disabledBackButton()
   {
     history.pushState(null, document.title, location.href);
@@ -53,21 +61,34 @@ export class QuizComponent implements OnInit {
     });
   }
 
+  openDialog() {
+    this.dialog.open(ReportToEmailComponent, {
+      data: {
+        height: '400px',
+        width: '600px',
+        quiz : this.quiz,
+        timeDuration : this.time,
+        email:'amansaini1407@gmail.com'
+      },
+    });
+  }
+
+
+
   //SUBMIT QUIZ
   result:any={};
   submitQuiz()
   {
-    //GET TIMES (with:ration)
-    console.log(this.display);
-    
-    //console.log("SUBMIT QUIZ....");
-    this.quizService.submitQuiz(this.quiz).subscribe((data:any)=>{
+    this.isSubmit = true;
+    this.quizService.submitQuiz(this.quiz,this.display).subscribe((data:any)=>{
       this.result = data
-      console.log(data);
+      //console.log(data);
     },(error)=>{
       console.log(error);
     })
   }
+
+  
 
 
 

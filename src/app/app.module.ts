@@ -30,7 +30,9 @@ import { InstructionsComponent } from './pages/instructions/instructions/instruc
 import { QuizComponent } from './pages/quiz/quiz/quiz.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import { NoSanitizePipe } from '../app/_helpers/nosanitizerpipe';
+import { ReportToEmailComponent } from './pages/quiz/report-to-email/report-to-email.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     DemoComponent,
     InstructionsComponent,
     QuizComponent,
+    NoSanitizePipe,
+    ReportToEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +67,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     BrowserAnimationsModule,
     MatRadioModule,
     MatSnackBarModule,
+    MatDialogModule,
     MatProgressSpinnerModule,
     NgxUiLoaderModule, // import NgxUiLoaderModule
     NgxUiLoaderHttpModule.forRoot({
