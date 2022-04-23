@@ -18,9 +18,11 @@ export class BranchComponent implements OnInit {
   ngOnInit(): void {
 
        //SCROLL TO (0,0) AXIS POINT
-       this.router.events.subscribe((event) => {
-        window.scrollTo(0, 0)
-    });
+       window.scroll({ 
+        top: 0, 
+        left: 0, 
+        behavior: 'smooth' 
+  });
 
     this.bottomCategoryName=this._activateRouter.snapshot.params.bottomCategoryName;
     this.bottomCategoryId=this._activateRouter.snapshot.params.bottomCategoryId;

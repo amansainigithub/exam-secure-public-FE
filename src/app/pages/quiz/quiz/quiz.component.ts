@@ -68,7 +68,6 @@ export class QuizComponent implements OnInit {
         width: '600px',
         quiz : this.quiz,
         timeDuration : this.time,
-        email:'amansaini1407@gmail.com'
       },
     });
   }
@@ -79,6 +78,12 @@ export class QuizComponent implements OnInit {
   result:any={};
   submitQuiz()
   {
+    window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+});
+
     this.isSubmit = true;
     this.quizService.submitQuiz(this.quiz,this.display).subscribe((data:any)=>{
       this.result = data

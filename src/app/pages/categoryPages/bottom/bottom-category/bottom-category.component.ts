@@ -19,9 +19,11 @@ export class BottomCategoryComponent implements OnInit {
   ngOnInit(): void {
     
      //SCROLL TO (0,0) AXIS POINT
-     this.router.events.subscribe((event) => {
-      window.scrollTo(0, 0)
-  });
+     window.scroll({ 
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+});
 
     this.subCategoryName=this._activateRouter.snapshot.params.subCategoryName;
     this.subCategoryId=this._activateRouter.snapshot.params.subCategoryId;

@@ -9,11 +9,10 @@ import { QuizService } from 'src/app/_services/categoryServices/quiz-service/qui
 })
 export class ReportToEmailComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: {quiz:any,timeDuration:any,email:any},  private quizService:QuizService) {
-    console.log(data.quiz);
-    console.log(data.timeDuration);
-    console.log(data.email);
-    console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+  constructor(@Inject(MAT_DIALOG_DATA) public data: {quiz:any,timeDuration:any},  private quizService:QuizService) {
+    // console.log(data.quiz);
+    // console.log(data.timeDuration);
+    // console.log(data.email);
     
   }
 
@@ -31,10 +30,9 @@ export class ReportToEmailComponent implements OnInit {
   sendEmail()
   {
     console.log("emai Sender Working....");
-    let email =  JSON.stringify(this.data.email);
     let timeDuration =  JSON.stringify(this.data.timeDuration);
 
-    this.quizService.sendReportToEmail(this.data.quiz,timeDuration,email).subscribe(data=>{
+    this.quizService.sendReportToEmail(this.data.quiz,timeDuration,this.reportForm.email).subscribe(data=>{
       console.log("SEND EMAIL SSS");
       console.log(data);
     },error=>{

@@ -72,7 +72,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     NgxUiLoaderModule, // import NgxUiLoaderModule
     NgxUiLoaderHttpModule.forRoot({
       showForeground:true,
-    })// import NgxUiLoaderHttpModule. By default, it will show background loader.
+    },)// import NgxUiLoaderHttpModule. By default, it will show background loader.
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
