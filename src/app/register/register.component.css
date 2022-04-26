@@ -30,3 +30,33 @@ label {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+
+
+
+/* ****************************** */
+
+.code0012
+{
+  border-radius: 7px;
+}
+
+.code0013
+{
+  color: #BF6CE8;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.code0014
+{
+  border-radius: 15px;
+}
+
+.code0018
+{
+  margin-top: 50%;
+  font-size: 22px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.3;
+  
+}
