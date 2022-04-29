@@ -4,8 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { QuestionAnswerService } from 'src/app/_services/categoryServices/question-answer-service/question-answer.service';
 import { QuizService } from 'src/app/_services/categoryServices/quiz-service/quiz.service';
 import { ReportToEmailComponent } from '../report-to-email/report-to-email.component';
-
-
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
@@ -94,6 +92,45 @@ export class QuizComponent implements OnInit {
   }
 
   
+  //DOWNLOAD QUIZ REPORT TO PDF
+  downloadQuizReportToPDF()
+  {
+    this.downF();
+    return;
+    console.log(this.quiz);
+    
+    this.isSubmit = true;
+    this.quizService.generateQuizResultPdf(this.quiz,this.display).subscribe((data: any)=>{
+      console.log(data);
+    },(error)=>{
+      console.log(error);
+    })
+  }
+
+  
+downF()
+{
+  this.quizService.generateQuizResultPdf(this.quiz,this.display)
+  .subscribe(data => this.downloadFile(data)),
+  // error => console.log('Error downloading the file.'),
+  () => console.info('OK');
+}
+
+downloadFile(data: any) {
+  const blob = new Blob([data], { type: 'application/pdf' });
+
+  //DOWNLOAD CODE
+  var a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = "fileName";
+          // start download
+          a.click();
+
+    // OPEN PDF TO NEW TAB
+  // const url= window.URL.createObjectURL(blob);
+  // window.open(url);
+}
+
 
 
 

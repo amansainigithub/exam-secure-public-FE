@@ -22,4 +22,16 @@ export class QuizService {
       
     return  this.http.post(this._AUTH_URL.API_URL + 'sendReportToEmail/'+timeDuration+"/"+email,quizList);
   }
+
+  generateQuizResultPdf(quizList:any,timeDuration:any)
+  {
+    return  this.http.post(this._AUTH_URL.API_URL + 'generateQuizResultPdf/'+timeDuration,quizList,{
+      responseType: 'blob'
+    });
+  }
+
+  
+
+
+
 }
