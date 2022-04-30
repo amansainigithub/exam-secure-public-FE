@@ -233,26 +233,34 @@
 
         <!-- MORE OPTIONS -->
         <hr>
-        <div class="row mt-3">
-            <div class="col-sm-4">
+        <div class="row">
+            <div class="col-md-5 offset-md-1 mt-3">
                 <a routerLink="/" mat-raised-button style="background-color: #D4E6F1;">
+                    <i class="bi bi-question-circle-fill" style="color: #2E86C1;"></i>
                     More Quizes
                 </a>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-md-5 offset-md-1 mt-3">
                 <a (click)="openDialog()" mat-raised-button style="background-color: #FAE5D3;">
+                    <i class="bi bi-envelope-check-fill " style="color: #CA6F1E;"></i>
                    Send Report To Email
                 </a>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-md-5 offset-md-1 mt-3">
                 <button (click)="downloadQuizReportToPDF()" mat-raised-button style="background-color: #E8DAEF;">
-                   Download Repost PDF
+                    <i class="bi bi-file-pdf-fill" style="color: #884EA0;"></i>
+                   Download PDF Report
                 </button>
             </div>
 
-            
+            <div class="col-md-5 offset-md-1 mt-3">
+                <a (click)="answerSheet()" mat-raised-button style="background-color: #EAFAF1;">
+                    <i class="bi bi-clipboard-check-fill" style="color: #239B56;"></i>
+                  Answer Sheet
+                </a>
+            </div>
         </div>
 
     </mat-card>
@@ -261,3 +269,96 @@
 
 </div>
 <!-- SHOWING QUIZ RESULT ENDING -->
+
+
+
+<!-- ANSWER SHEETS -->
+
+<div *ngIf="ansSheet == true" class="container mt-5" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;border-radius: 10px;padding: 20px;" > 
+
+       <span class="text-center" style="padding: 5px; background-color: whitesmoke;color: #6495ED;font-size: 22px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+           ANSWER SHEET
+       </span>
+   
+
+    <mat-card-content class="p-4" *ngFor="let node of quiz; let i = index">
+         <mat-card>
+    
+           <b>{{ i+1 }} ) {{node.question}} </b>
+           <span *ngIf="node.givenAnswer == ' '">
+               <h3 class="text-danger">NOT ATTEMPT</h3>
+           </span>
+
+             <div *ngIf="node.questionFiles != ''">
+                        <div *ngFor="let qf of node.questionFiles; let i = index">
+                            <span>{{qf.fileUrl}}</span>
+                        </div>
+               </div>
+
+                <div *ngIf="node.questionFiles == ''">
+                    <span>EMPTY</span>
+                    <span>{{node.questionFiles}}</span>
+                </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div *ngIf="node.option1 == node.givenAnswer"   class="alert alert-warning" role="alert">
+                                <b>a ) </b>
+                                {{node.option1}}
+                              </div>
+                              <div *ngIf="node.option1 != node.givenAnswer"   class="alert alert-primary" role="alert">
+                                <b>a ) </b>
+                                 {{node.option1}}
+                              </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div *ngIf="node.option2 == node.givenAnswer"   class="alert alert-warning" role="alert">
+                                <b>b ) </b>  
+                                {{node.option2}}
+                              </div>
+                              <div *ngIf="node.option2 != node.givenAnswer"   class="alert alert-primary" role="alert">
+                                <b>b ) </b>
+                                 {{node.option2}}
+                              </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div *ngIf="node.option3 == node.givenAnswer"   class="alert alert-warning" role="alert">
+                                <b>c ) </b>
+                                  {{node.option3}}
+                              </div>
+                              <div *ngIf="node.option3 != node.givenAnswer"   class="alert alert-primary" role="alert">
+                                <b>c ) </b>
+                                 {{node.option3}}
+                              </div>
+                        </div>
+
+                        <div   class="col-md-6">
+                            <div *ngIf="node.option4 == node.givenAnswer"   class="alert alert-warning" role="alert">
+                                <b>d ) </b>
+                                 {{node.option4}}
+                              </div>
+                              <div *ngIf="node.option4 != node.givenAnswer"   class="alert alert-primary" role="alert">
+                                <b>d ) </b>
+                                  {{node.option4}}
+                              </div>
+                        </div>
+
+                        <div class="col-md-10 alert alert-success" style="margin-left: 20px;" role="alert">
+                            <b>Answer : ( {{node.ansNameKey}} )</b>{{node.ansKey}} 
+                            <i class="bi bi-check-circle text-success"></i>
+                        </div>
+                    </div>
+
+            </mat-card>
+
+            
+
+        </mat-card-content>
+
+</div>
+
+
+<!-- ANSWER SHEETS END-->

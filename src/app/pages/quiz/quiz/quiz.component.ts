@@ -42,7 +42,7 @@ export class QuizComponent implements OnInit {
   getQuestionAnswerListByQuestionSetIdPublic_RC()
   {
     this._qas.getQuestionAnswerListByQuestionSetIdPublic_RC(this.id).subscribe(data=>{
-       console.log(data);
+       //console.log(data);
       this.quiz = data;
     },error=>{
       console.log(error);
@@ -76,16 +76,18 @@ export class QuizComponent implements OnInit {
   result:any={};
   submitQuiz()
   {
-    window.scroll({ 
-      top: 0, 
-      left: 0, 
-      behavior: 'smooth' 
-});
+          window.scroll({ 
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth' 
+      });
 
     this.isSubmit = true;
+    console.log(this.quiz);
+    
     this.quizService.submitQuiz(this.quiz,this.display).subscribe((data:any)=>{
       this.result = data
-      //console.log(data);
+      console.log(data);
     },(error)=>{
       console.log(error);
     })
@@ -95,34 +97,20 @@ export class QuizComponent implements OnInit {
   //DOWNLOAD QUIZ REPORT TO PDF
   downloadQuizReportToPDF()
   {
-    this.downF();
-    return;
-    console.log(this.quiz);
-    
-    this.isSubmit = true;
-    this.quizService.generateQuizResultPdf(this.quiz,this.display).subscribe((data: any)=>{
-      console.log(data);
-    },(error)=>{
-      console.log(error);
-    })
+    this.quizService.generateQuizResultPdf(this.quiz,this.display)
+    .subscribe(data => this.downloadFile(data)),
+    // error => console.log('Error downloading the file.'),
+    () => console.info('OK');
   }
 
   
-downF()
-{
-  this.quizService.generateQuizResultPdf(this.quiz,this.display)
-  .subscribe(data => this.downloadFile(data)),
-  // error => console.log('Error downloading the file.'),
-  () => console.info('OK');
-}
-
 downloadFile(data: any) {
   const blob = new Blob([data], { type: 'application/pdf' });
 
   //DOWNLOAD CODE
   var a = document.createElement("a");
           a.href = URL.createObjectURL(blob);
-          a.download = "fileName";
+          a.download = "QUIZ-REPORT";
           // start download
           a.click();
 
@@ -131,7 +119,12 @@ downloadFile(data: any) {
   // window.open(url);
 }
 
-
+ansSheet:any = false;
+answerSheet()
+{ 
+  console.log("working......");
+  this.ansSheet = true;
+}
 
 
 
