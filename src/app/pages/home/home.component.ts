@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 import { BranchService } from 'src/app/_services/categoryServices/branch-service/branch.service';
 import { SubCategoryService } from 'src/app/_services/categoryServices/sub-category-service/sub-category.service';
 
+
+declare var Tesseract:any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  public Editor = ClassicEditorBuild;
 
-  constructor(private _bs:BranchService,private _scs:SubCategoryService) { }
+  constructor(private _bs:BranchService,private _scs:SubCategoryService) { 
+    // this.test();
+  }
 
   ngOnInit(): void {
     //branch-list
@@ -44,5 +50,29 @@ export class HomeComponent implements OnInit {
       
     })
   }
+
+
+
+
+  // public tools: object = {
+  //   items: [
+  //          'Bold', 'Italic', 'Underline', 'StrikeThrough', '|',
+  //          'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
+  //          'LowerCase', 'UpperCase', '|', 'Undo', 'Redo', '|',
+  //          'Formats', 'Alignments', '|', 'OrderedList', 'UnorderedList', '|',
+  //          'Indent', 'Outdent', '|', 'CreateLink','CreateTable',
+  //          'Image', '|', 'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
+  //  };
+
+  // test(){
+  //   Tesseract.recognize('../../../assets/home-page/img.png').then(function(result:any){         
+  //     alert(result.text);      
+  //     });    
+  // }  
+
+
+
+
+
 }
 

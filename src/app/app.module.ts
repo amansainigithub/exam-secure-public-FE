@@ -33,6 +33,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NoSanitizePipe } from '../app/_helpers/nosanitizerpipe';
 import { ReportToEmailComponent } from './pages/quiz/report-to-email/report-to-email.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSnackBarModule,
     MatDialogModule,
     MatProgressSpinnerModule,
+
+    RichTextEditorAllModule,
+    CKEditorModule,
+
     NgxUiLoaderModule, // import NgxUiLoaderModule
     NgxUiLoaderHttpModule.forRoot({
       showForeground:true,

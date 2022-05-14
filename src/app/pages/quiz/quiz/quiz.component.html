@@ -34,8 +34,11 @@
     
             <mat-card-content class="p-4" *ngFor="let node of quiz; let i = index">
                 <mat-card>
-    
-                    <b>{{ i+1 }} ) {{node.question}} </b>
+
+                   
+                  <span>
+                    <b class="mx-2"> {{ i+1 }} )</b> <b [innerHTML]="node.question" ></b>
+                  </span>
     
                    <div *ngIf="node.questionFiles != ''">
                         <div *ngFor="let qf of node.questionFiles; let i = index">
@@ -284,7 +287,10 @@
     <mat-card-content class="p-4" *ngFor="let node of quiz; let i = index">
          <mat-card>
     
-           <b>{{ i+1 }} ) {{node.question}} </b>
+          <span >
+            <b>{{ i+1 }} ) </b> <b class="mx-4" [innerHTML]="node.question"></b>
+          </span>
+
            <span *ngIf="node.givenAnswer == ' '">
                <h3 class="text-danger">NOT ATTEMPT</h3>
            </span>

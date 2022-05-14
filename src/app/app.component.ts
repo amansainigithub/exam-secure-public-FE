@@ -15,6 +15,8 @@ export class AppComponent implements OnInit {
 
   constructor(public tokenStorageService: TokenStorageService) { }
 
+  
+
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
