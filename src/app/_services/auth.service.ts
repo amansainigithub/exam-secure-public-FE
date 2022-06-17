@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const AUTH_API = 'http://localhost:5599/api/public/auth/cred/';
+const AUTH_API = 'http://localhost:5000/api/public/auth/cred/';
+// const AUTH_API = 'http://examsecure-env.eba-3xmk9bvg.us-east-1.elasticbeanstalk.com/api/public/auth/cred/';
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
