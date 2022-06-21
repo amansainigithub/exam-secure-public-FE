@@ -2,12 +2,7 @@
   "name": "angular11-jwt-auth",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +19,7 @@
     "@ckeditor/ckeditor5-angular": "^4.0.0",
     "@ckeditor/ckeditor5-build-classic": "^34.0.0",
     "@syncfusion/ej2-angular-richtexteditor": "^20.1.55",
+    "angularx-qrcode": "^11.0.0",
     "ngx-stopwatch": "^1.0.2",
     "ngx-ui-loader": "^10.0.0",
     "rxjs": "~6.6.0",

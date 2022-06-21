@@ -57,9 +57,14 @@
                                   START
                                 </a>
 
-                                <button  mat-stroked-button color="primary">
+                                <button  mat-stroked-button color="primary" >
                                   WATCH
                               </button>
+
+                              <button class="mt-2"  (click)="showQrCode(node2.questionSetName,node2.id)" mat-stroked-button color="primary">
+                                SHOW QR
+                            </button>
+
                               </mat-card-actions>
 
                             </mat-card>

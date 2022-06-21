@@ -35,6 +35,8 @@ import { ReportToEmailComponent } from './pages/quiz/report-to-email/report-to-e
 import {MatDialogModule} from '@angular/material/dialog';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { QrcodeComponent } from './pages/QRCODE/qrcode/qrcode.component';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     QuizComponent,
     NoSanitizePipe,
     ReportToEmailComponent,
+    QrcodeComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +77,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
     RichTextEditorAllModule,
     CKEditorModule,
+    QRCodeModule,
 
     NgxUiLoaderModule, // import NgxUiLoaderModule
     NgxUiLoaderHttpModule.forRoot({
