@@ -40,21 +40,21 @@
 
 <div class="container marginTop70">
 
-    <button class="button">
+    <!-- <button class="button">
         <i class="bi bi-book-half textBookColor"></i>
         <span class="code300"> QUIZ CATEGORY </span>
       </button>
 
 
-      <!-- FETCH CATEGORY START -->
+       
       <div class="row">
         <div class="col-md-3 mt-4" *ngFor="let node of branchList; let i = index">
             <div [style.background-color]="node.bgColor" style="border-radius: 10px;" class="text-center" *ngIf="node.status == true">
                 <div class="card-body p-0 pt-3">
                     <h5 class="card-title">
-                        <!-- <span>
+                         <span>
                             <img src="{{node.fileUrl}}" height="30" width="30" style="border-radius: 50%;font-weight: 600;" alt="">
-                        </span> -->
+                        </span>
                         <span class="code400">
                             {{node.branchName}}
                           
@@ -78,7 +78,7 @@
 
               </div>
         </div>
-      </div>
+      </div> -->
        <!-- FETCH CATEGORY END -->
 
 
