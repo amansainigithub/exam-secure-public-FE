@@ -17,6 +17,7 @@ import { BranchComponent } from './pages/categoryPages/branch/branch/branch.comp
 import { DemoComponent } from './pages/categoryPages/test/demo/demo.component';
 import { InstructionsComponent } from './pages/instructions/instructions/instructions.component';
 import { QuizComponent } from './pages/quiz/quiz/quiz.component';
+import { RootComponent } from './pages/categoryPages/root/root/root.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'branch/:bottomCategoryName/:bottomCategoryId', component: BranchComponent },
   { path: 'instructions/:questionSetName/:id', component: InstructionsComponent },
   { path: 'quiz/:questionSetName/:id', component: QuizComponent },
+  { path: 'root/:rootCategoryName/:rootCategoryId', component: RootComponent },
 
   { path: 'dashboard',canActivate:[AuthguardGuard],
         children: [

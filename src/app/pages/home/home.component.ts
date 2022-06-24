@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as ClassicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 import { BranchService } from 'src/app/_services/categoryServices/branch-service/branch.service';
+import { RootServiceService } from 'src/app/_services/categoryServices/root-service/root-service.service';
 import { SubCategoryService } from 'src/app/_services/categoryServices/sub-category-service/sub-category.service';
 
 
@@ -13,7 +14,7 @@ declare var Tesseract:any;
 export class HomeComponent implements OnInit {
   public Editor = ClassicEditorBuild;
 
-  constructor(private _bs:BranchService,private _scs:SubCategoryService) { 
+  constructor(private _bs:BranchService,private _scs:SubCategoryService,private _rcs:RootServiceService) { 
     // this.test();
   }
 
@@ -23,6 +24,9 @@ export class HomeComponent implements OnInit {
 
     // subCategoryList
     this.getSubCategoryList();
+
+    //RootCategory
+    this.getRootCategoryList();
   }
 
   branchList:any;
@@ -30,6 +34,7 @@ export class HomeComponent implements OnInit {
   {
     this._bs.getBranchList().subscribe(data=>{
       this.branchList = data;
+      console.log(data);
       console.log(data);
       
     },error=>{
@@ -50,6 +55,21 @@ export class HomeComponent implements OnInit {
       
     })
   }
+
+
+  rootList:any;
+  getRootCategoryList()
+  {
+    this._rcs.getRootCategoryService().subscribe(data=>{
+      this.rootList = data;
+      console.log(data);
+      
+    },error=>{
+      console.log(error);
+      
+    })
+  }
+
 
 
 

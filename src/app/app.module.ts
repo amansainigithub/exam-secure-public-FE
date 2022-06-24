@@ -37,6 +37,7 @@ import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor'
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { QrcodeComponent } from './pages/QRCODE/qrcode/qrcode.component';
 import { QRCodeModule } from 'angularx-qrcode';
+import { RootComponent } from './pages/categoryPages/root/root/root.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { QRCodeModule } from 'angularx-qrcode';
     NoSanitizePipe,
     ReportToEmailComponent,
     QrcodeComponent,
+    RootComponent,
   ],
   imports: [
     BrowserModule,

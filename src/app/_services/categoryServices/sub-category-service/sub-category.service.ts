@@ -14,4 +14,9 @@ export class SubCategoryService {
   {
     return  this.http.get(this._AUTH_URL.API_URL + 'getSubCategoryPublic');
   }
+
+  getSubCategoryListByRootCategoryId(id:any)
+  {
+    return  this.http.get(this._AUTH_URL.API_URL + 'getSubCategoryListByRootCategoryIdPublic'+"/"+id);
+  }
 }

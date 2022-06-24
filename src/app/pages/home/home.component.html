@@ -131,6 +131,56 @@
        <!-- MORE CATEGORY ENDING-->
 
 
+
+            <!--ROOT CATEGORY START-->
+            <div class="mt-5">
+           
+                <div class="text-center">
+                    <button class="buttonMoreCategory">
+                        <i class="bi bi-book-half textBookColor2"></i>
+                        <span class="code300"> ROOT </span>
+                    </button>
+                </div>
+        
+                  <!-- FETCH ROOT CATEGORY START -->
+              <div class="row">
+                <div class="col-md-3 mt-4" *ngFor="let node of rootList; let i = index">
+                    <div [style.background-color]="node.bgColor" style="border-radius: 10px;" class="text-center" *ngIf="node.status == true">
+                        <div class="card-body p-0 pt-3">
+                            <h5 class="card-title">
+                                <!-- <span>
+                                    <img src="{{node.fileUrl}}" height="30" width="30" style="border-radius: 50%;font-weight: 600;" alt="">
+                                </span> -->
+                                <span class="code400">
+                                    {{node.rootCategoryName}}
+                                </span>
+                            </h5>
+                        </div>
+        
+                        <div>
+                            <a [routerLink]="'/root/'+node.rootCategoryName+'/'+node.id">
+                                <button class="buttonforSet">
+                                    <span> 
+                                        <i class="bi bi-caret-right-fill"></i> Select Quiz 
+                                    </span>
+                                </button>
+                            </a>
+                        </div>
+        
+                        <div>
+                            <i class="bi bi-arrow-left-circle-fill" [ngStyle]="{ color: node.bgColor }" ></i>
+                        </div>
+        
+                      </div>
+                </div>
+              </div>
+               <!-- FETCH ROOT CATEGORY END -->
+          
+        
+               </div>
+               <!-- MORE CATEGORY ENDING-->
+
+
 </div>
 <!-- ROOT CONTAINER END ! -->
 
@@ -176,7 +226,6 @@
                 are always looking for success strategies and want learn from those that 
                 have achieved their goals.
             </p>
-            
         </div>
 
         <div class="col-md-6">
