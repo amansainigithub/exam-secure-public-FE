@@ -33,7 +33,7 @@
             </mat-card-title>
     
             <mat-card-content class="p-4" *ngFor="let node of quiz; let i = index">
-                <mat-card>
+                <mat-card  *ngIf="node.status == true" >
 
                    
                   <span>

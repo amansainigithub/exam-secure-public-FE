@@ -30,9 +30,9 @@
 
                       </mat-expansion-panel-header>
 
-                      <div  class="mt-2" *ngFor="let node2 of node.questionSetsModels; let i = index">
+                      <div  class="mt-2" *ngFor="let node2 of node.questionSetsModels; let i = index" >
 
-                        <div class="cards">
+                        <div class="cards"  *ngIf="node2.status == true">
 
                           <a  style="text-decoration: none;cursor: pointer;"   >  
 
