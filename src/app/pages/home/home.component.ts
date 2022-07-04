@@ -32,10 +32,6 @@ export class HomeComponent implements OnInit {
   branchList:any;
   getBranchList()
   {
-
-    console.log("im here.................");
-    
-
     this._bs.getBranchList().subscribe(data=>{
       this.branchList = data;
       console.log(data);
