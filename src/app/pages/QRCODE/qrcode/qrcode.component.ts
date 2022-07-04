@@ -20,8 +20,11 @@ export class QrcodeComponent implements OnInit {
       // this.http.get("https://grabquiz.com/?format=json").subscribe((res:any)=>{
       //   console.log("***********************" + res.ip);
       // });
-      this.myAngularxQrCode = "https://grabquiz.tech"+"/instructions/"+data.qs+"/"+data.chapterId+"";
-    //  this.myAngularxQrCode = "http://localhost:4200"+"/instructions/"+data.qs+"/"+data.chapterId+"";
+     this.myAngularxQrCode = "https://grabquiz.com"+"/instructions/"+data.qs+"/"+data.chapterId+"";
+    //  this.myAngularxQrCode = "http://localhost:61102/instructions/"+data.qs+"/"+data.chapterId+"";
+     console.log("QR CODE PRINT ==================================");
+     console.log(this.myAngularxQrCode);
+     
      }
 
   ngOnInit(): void {
