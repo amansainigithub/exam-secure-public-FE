@@ -1,0 +1,61 @@
+
+
+    <div class="container mt-5">
+
+        <div class="text-center">
+            <button class="buttonMoreCategory">
+                <i class="bi bi-book-half textBookColor2"></i>
+                <span class="code300"> QUESTIONS SETS</span>
+            </button>
+        </div>
+       
+
+        
+        <div class="row mt-4">
+
+        <div class="col-sm-4 mb-4" *ngFor="let node of setList; let i = index"   >
+                
+                    <div class="cards"   *ngIf="node.status == true" >
+    
+                        <a  style="text-decoration: none;cursor: pointer;"   >  
+          
+                          <mat-card class="example-card" [style.background-color]="node.bgColor" style="border-radius: 10px;">
+          
+                            <b>
+                             <span  color="primary"> {{i+1}}) </span>
+                              <span class="ml-2">
+                                {{node.questionSetName}}
+                              </span>
+                            </b>  
+          
+                            <mat-card-actions class="text-center">
+                              <button  mat-stroked-button color="primary">
+                                <b class="mr-2"  color="primary">Q</b>
+                                  <span class="text-dark">
+                                    {{ node.questionLength }}
+                                  </span>
+                              </button>
+          
+                              <a [routerLink]="'/instructions/'+node.questionSetName+'/'+node.id"  mat-stroked-button color="primary">
+                                START
+                              </a>
+          
+                              <button  mat-stroked-button color="primary" >
+                                WATCH
+                            </button>
+          
+                            <button class="mt-2"  (click)="showQrCode(node.questionSetName,node.id)" mat-stroked-button color="primary">
+                              SHOW QR
+                          </button>
+          
+                            </mat-card-actions>
+          
+                          </mat-card>
+                        </a>
+          
+                      </div>
+                </div>
+    
+          </div>
+    
+    </div>

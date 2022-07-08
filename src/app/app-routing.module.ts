@@ -18,6 +18,7 @@ import { DemoComponent } from './pages/categoryPages/test/demo/demo.component';
 import { InstructionsComponent } from './pages/instructions/instructions/instructions.component';
 import { QuizComponent } from './pages/quiz/quiz/quiz.component';
 import { RootComponent } from './pages/categoryPages/root/root/root.component';
+import { WatchAllSetComponent } from './pages/watchAllSets/watch-all-set/watch-all-set.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'instructions/:questionSetName/:id', component: InstructionsComponent },
   { path: 'quiz/:questionSetName/:id', component: QuizComponent },
   { path: 'root/:rootCategoryName/:rootCategoryId', component: RootComponent },
+  { path: 'quizSets/:subCategoryName/:id', component: WatchAllSetComponent },
 
   { path: 'dashboard',canActivate:[AuthguardGuard],
         children: [

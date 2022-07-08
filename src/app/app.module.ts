@@ -38,6 +38,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { QrcodeComponent } from './pages/QRCODE/qrcode/qrcode.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { RootComponent } from './pages/categoryPages/root/root/root.component';
+import { WatchAllSetComponent } from './pages/watchAllSets/watch-all-set/watch-all-set.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { RootComponent } from './pages/categoryPages/root/root/root.component';
     ReportToEmailComponent,
     QrcodeComponent,
     RootComponent,
+    WatchAllSetComponent,
   ],
   imports: [
     BrowserModule,

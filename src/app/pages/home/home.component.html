@@ -88,7 +88,7 @@
         <div class="text-center">
             <button class="buttonMoreCategory">
                 <i class="bi bi-book-half textBookColor2"></i>
-                <span class="code300"> MORE CATEGORYISSHU </span>
+                <span class="code300"> MORE CATEGORY </span>
             </button>
         </div>
 
@@ -115,6 +115,14 @@
                             </span>
                         </button>
                     </a>
+
+                    <a [routerLink]="'/quizSets/'+node.subCategoryName+'/'+node.id">
+                        <button class="watchAllSet">
+                            <span> 
+                                <i class="bi bi-caret-right-fill"></i> Watch All Sets
+                            </span>
+                        </button>
+                    </a>
                 </div>
 
                 <div>
@@ -138,7 +146,7 @@
                 <div class="text-center">
                     <button class="buttonMoreCategory">
                         <i class="bi bi-book-half textBookColor2"></i>
-                        <span class="code300"> ROOT </span>
+                        <span class="code300"> CATEGORY </span>
                     </button>
                 </div>
         

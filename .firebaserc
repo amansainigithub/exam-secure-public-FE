@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "exam-f48c0"
-  }
+    "default": "quizclear",
+    "c": "quizclear"
+  },
+  "targets": {}
 }

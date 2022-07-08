@@ -14,4 +14,11 @@ export class ChapterService {
     return  this.http.get(this._AUTH_URL.API_URL + 'getChaptersByBranchCategoryId/'+id);
   }
 
+
+  getAllSetsBySubId(id:any)
+  {
+    return  this.http.get(this._AUTH_URL.API_URL + 'getAllSetsBySubId/'+id);
+  }
+
+
 }

@@ -32,6 +32,8 @@ export class ReportToEmailComponent implements OnInit {
   email:any;
   sendEmail()
   {
+    console.log(this.data.quiz);
+    console.log("*****************************");
     console.log("emai Sender Working....");
     let timeDuration =  JSON.stringify(this.data.timeDuration);
 
