@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand navbar-dark" style="background-color: white;">
     <a routerLink="/" class="navbar-brand">
       <i class="bi bi-book-half gnColor code1001"></i>
-      <span class="code1002 gnColor">GRAB QUIZ</span>
+      <span class="code1002 gnColor">QUIZ CLEAR</span>
     </a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <!-- <li class="nav-item">
@@ -17,18 +17,18 @@
       <li class="nav-item">
         <a href="/login" class="nav-link" routerLink="login">Login</a>
       </li> -->
-      <li>
+      <!-- <li>
         <button   routerLink="login"   routerLink="register" class="button button2">
           <i class="bi bi-person-plus"></i>
           Sign Up
         </button>
-      </li>
-      <li>
+      </li> -->
+      <!-- <li> -->
         <!-- <button   routerLink="login" class="button button1">
           <i class="bi bi-lock-fill"></i>
           Login
         </button> -->
-      </li>
+      <!-- </li> -->
     </ul>
 
     <ul class="navbar-nav ml-auto" *ngIf="tokenStorageService.isLoggedIn()">

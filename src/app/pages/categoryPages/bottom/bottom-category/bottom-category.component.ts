@@ -27,13 +27,13 @@ export class BottomCategoryComponent implements OnInit {
 
     this.subCategoryName=this._activateRouter.snapshot.params.subCategoryName;
     this.subCategoryId=this._activateRouter.snapshot.params.subCategoryId;
-    this.getBottomCategoriesBySubCategoryIdRc();
+    this.getBottomCategoriesBySubIdRW();
   }
 
   bottomCategoryList:any;
-  getBottomCategoriesBySubCategoryIdRc()
+  getBottomCategoriesBySubIdRW()
   {
-    this._bs.getBottomCategoriesBySubCategoryId_RC(this.subCategoryId).subscribe(data=>{
+    this._bs.getBottomCategoriesBySubIdRW(this.subCategoryId).subscribe(data=>{
       console.log(data);
       this.bottomCategoryList = data;
     },error=>{

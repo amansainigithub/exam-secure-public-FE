@@ -1,5 +1,87 @@
 
 
+
+
+
+    <div class="container mt-5">
+
+      <div class="text-center">
+          <button class="buttonMoreCategory">
+              <i class="bi bi-book-half textBookColor2"></i>
+              <span class="code300"> QUESTIONS SETS</span>
+          </button>
+      </div>
+     
+
+      
+      <div class="row mt-5">
+          <div class="col-sm-4 mb-5" *ngFor="let node of setList; let i = index">
+
+                <div class="card cardWatch" style="max-width: 20rem;"  [style.background-color]="node.bgColor" >
+                  <div class="card-body"  *ngIf="node.status == false"  >
+
+                            <h3 class="text-center">
+                              <b>
+                                QUIZ TIME
+                              </b>
+                            </h3>
+
+                            <div class="text-center">
+                              <b>
+                                <span class="ml-2">
+                                  {{node.questionSetName}}
+                                </span>
+                              </b>  
+                            </div>
+
+                            <div class="row mt-3">
+                             
+                                  <button class="btn btn-light btn-sm mx-4" >
+                                    <b>
+                                      Q )   {{ node.questionLength }}
+                                    </b>
+                                  </button>
+                            
+                              
+                                  <a [routerLink]="'/instructions/'+node.questionSetName+'/'+node.id" class="btn btn-light btn-sm mx-3"  >
+                                    <b>START</b>
+                                  </a>
+                             
+                              
+                                  <button class="mt-2 mx-4"  (click)="showQrCode(node.questionSetName,node.id)" class="btn btn-light btn-sm">
+                                    <b>SHOW QR</b>
+                                </button>
+                              
+                            </div>
+
+                      </div>
+                </div>
+         </div>
+     </div>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
     <div class="container mt-5">
 
         <div class="text-center">
@@ -9,8 +91,6 @@
             </button>
         </div>
        
-
-        
         <div class="row mt-4">
 
         <div class="col-sm-4 mb-4" *ngFor="let node of setList; let i = index"   >
@@ -58,4 +138,4 @@
     
           </div>
     
-    </div>
+    </div> -->

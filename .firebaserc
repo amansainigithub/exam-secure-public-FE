@@ -1,7 +1,8 @@
 {
   "projects": {
     "default": "quizclear",
-    "c": "quizclear"
+    "c": "quizclear",
+    "quiz": "quizclear"
   },
   "targets": {}
 }

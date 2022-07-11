@@ -35,4 +35,10 @@ export class BranchService {
   {
     return  this.http.get(this._AUTH_URL.API_URL + 'getBranchListByBottomCategoryIdPublic/'+bottomCategoryId);
   }
+
+
+  getBranchListBySubId(subId:any)
+  {
+    return  this.http.get(this._AUTH_URL.API_URL + 'getBranchListBySubId/'+subId);
+  }
 }

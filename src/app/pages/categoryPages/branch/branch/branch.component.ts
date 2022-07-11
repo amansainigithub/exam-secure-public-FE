@@ -13,8 +13,8 @@ export class BranchComponent implements OnInit {
     private _activateRouter:ActivatedRoute,
     private router:Router) { }
 
-    bottomCategoryName:any;
-    bottomCategoryId:any;
+    subCategoryName:any;
+    subCategoryId:any;
   ngOnInit(): void {
 
        //SCROLL TO (0,0) AXIS POINT
@@ -24,20 +24,22 @@ export class BranchComponent implements OnInit {
         behavior: 'smooth' 
   });
 
-    this.bottomCategoryName=this._activateRouter.snapshot.params.bottomCategoryName;
-    this.bottomCategoryId=this._activateRouter.snapshot.params.bottomCategoryId;
-    console.log(this.bottomCategoryId);
-    console.log(this.bottomCategoryName);
+    this.subCategoryName=this._activateRouter.snapshot.params.subCategoryName;
+    this.subCategoryId=this._activateRouter.snapshot.params.subId;
+    console.log(this.subCategoryId);
+    console.log(this.subCategoryName);
     
     //calling
-    this.getBranchListByBottomCategoryIdPublic();
+    this.getBranchListBySubId();
   }
 
   branchList:any;
-  getBranchListByBottomCategoryIdPublic()
+
+  getBranchListBySubId()
   {
-    this._branch.getBranchListByBottomCategoryIdPublic(this.bottomCategoryId).subscribe(data=>{
+    this._branch.getBranchListBySubId(this.subCategoryId).subscribe(data=>{
       this.branchList = data;
+      console.log("**********");
       console.log(data);
       
     },error=>{
@@ -45,5 +47,18 @@ export class BranchComponent implements OnInit {
       
     })
   }
+
+
+  // getBranchListByBottomCategoryIdPublic()
+  // {
+  //   this._branch.getBranchListByBottomCategoryIdPublic(this.subCategoryId).subscribe(data=>{
+  //     this.branchList = data;
+  //     console.log(data);
+      
+  //   },error=>{
+  //     console.log(error);
+      
+  //   })
+  // }
 
 }

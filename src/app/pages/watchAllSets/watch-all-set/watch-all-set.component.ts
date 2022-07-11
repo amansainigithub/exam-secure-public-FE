@@ -39,7 +39,12 @@ export class WatchAllSetComponent implements OnInit {
   {
     this._chapter.getAllSetsBySubId(this.id).subscribe(data=>{
       this.setList = data;
+      console.log("*************************");
+      
+      console.log("*************************");
       console.log(data);
+      console.log("*************************");
+
       
     },error=>{
       console.log(error);

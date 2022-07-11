@@ -14,4 +14,10 @@ export class BottomService {
   {
     return  this.http.get(this._AUTH_URL.API_URL + 'getBottomCategoriesBySubCategoryIdRc/'+subCategoryId);
   }
+
+
+  getBottomCategoriesBySubIdRW(subCategoryId:any)
+  {
+    return  this.http.get(this._AUTH_URL.API_URL + 'getBottomCategoriesBySubIdRW/'+subCategoryId);
+  }
 }

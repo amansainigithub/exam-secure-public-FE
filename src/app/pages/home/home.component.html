@@ -85,59 +85,64 @@
       <!-- MORE CATEGORY START-->
        <div class="mt-5">
            
-        <div class="text-center">
-            <button class="buttonMoreCategory">
-                <i class="bi bi-book-half textBookColor2"></i>
-                <span class="code300"> MORE CATEGORY </span>
-            </button>
+        
+
+
+        <!-- ROOT CATEGORY START -->
+
+        <div *ngFor="let node of rootList; let i = index" >
+
+            <div *ngIf="node.subCategoryModel.length != 0" class="text-center mt-5">
+                <button class="buttonMoreCategory" >
+                    <i class="bi bi-book-half"></i>
+                    <span class="code300"> {{node.rootCategoryName}} </span>
+                </button>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 mt-4" *ngFor="let subList of node.subCategoryModel; let i = index">
+                    <div [style.background-color]="subList.bgColor" style="border-radius: 10px;" class="text-center" *ngIf="subList.status == true">
+                        <div class="card-body p-0 pt-3">
+                            <h5 class="card-title">
+                                <!-- <span>
+                                    <img src="{{node.fileUrl}}" height="30" width="30" style="border-radius: 50%;font-weight: 600;" alt="">
+                                </span> -->
+                                <span class="code400">
+                                    {{subList.subCategoryName}}
+                                </span>
+                            </h5>
+                        </div>
+        
+                        <div>
+                            <a [routerLink]="'/quizSets/'+subList.subCategoryName+'/'+subList.id">
+                                <button class="watchAllSet">
+                                    <span> 
+                                        <i class="bi bi-caret-right-fill"></i> Watch All Sets
+                                    </span>
+                                </button>
+                            </a>
+
+                            <a [routerLink]="'/category/'+subList.subCategoryName+'/'+subList.id">
+                                <button class="buttonforSet">
+                                    <span> 
+                                        <i class="bi bi-caret-right-fill"></i> Select Quiz 
+                                    </span>
+                                </button>
+                            </a>
+                        </div>
+        
+                        <div>
+                            <i class="bi bi-arrow-left-circle-fill" [ngStyle]="{ color: subList.bgColor }" ></i>
+                        </div>
+        
+                      </div>                    
+                </div>
+
+            </div>
+
         </div>
-
-          <!-- FETCH SUB CATEGORY START -->
-      <div class="row">
-        <div class="col-md-3 mt-4" *ngFor="let node of subCategoryList; let i = index">
-            <div [style.background-color]="node.bgColor" style="border-radius: 10px;" class="text-center" *ngIf="node.status == true">
-                <div class="card-body p-0 pt-3">
-                    <h5 class="card-title">
-                        <!-- <span>
-                            <img src="{{node.fileUrl}}" height="30" width="30" style="border-radius: 50%;font-weight: 600;" alt="">
-                        </span> -->
-                        <span class="code400">
-                            {{node.subCategoryName}}
-                        </span>
-                    </h5>
-                </div>
-
-                <div>
-                    <a [routerLink]="'/category/'+node.subCategoryName+'/'+node.id">
-                        <button class="buttonforSet">
-                            <span> 
-                                <i class="bi bi-caret-right-fill"></i> Select Quiz 
-                            </span>
-                        </button>
-                    </a>
-
-                    <a [routerLink]="'/quizSets/'+node.subCategoryName+'/'+node.id">
-                        <button class="watchAllSet">
-                            <span> 
-                                <i class="bi bi-caret-right-fill"></i> Watch All Sets
-                            </span>
-                        </button>
-                    </a>
-                </div>
-
-                <div>
-                    <i class="bi bi-arrow-left-circle-fill" [ngStyle]="{ color: node.bgColor }" ></i>
-                </div>
-
-              </div>
-        </div>
-      </div>
-       <!-- FETCH SUB CATEGORY END -->
-  
-
-       </div>
-       <!-- MORE CATEGORY ENDING-->
-
+</div>
+        <!-- ROOT CATEGORY ENDING !!! -->
 
 
             <!--ROOT CATEGORY START-->
@@ -145,8 +150,8 @@
            
                 <div class="text-center">
                     <button class="buttonMoreCategory">
-                        <i class="bi bi-book-half textBookColor2"></i>
-                        <span class="code300"> CATEGORY </span>
+                        <i class="bi bi-book-half"></i>
+                        <span class="code300"> CATEGORYS </span>
                     </button>
                 </div>
         

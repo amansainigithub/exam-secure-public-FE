@@ -18,3 +18,16 @@
     color:#34495E ;
     font-weight: 600;
   }
+
+
+  .cardWatch {
+    transition: all 0.2s ease;
+    border-radius: 15px;
+    cursor: pointer
+}
+.cardWatch:hover {
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-top: 4px solid #7C81E3; /* Green */
+    border-radius: 15px;
+    transform: scale(1.02)
+}
