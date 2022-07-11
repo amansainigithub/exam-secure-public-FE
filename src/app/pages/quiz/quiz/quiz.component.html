@@ -11,7 +11,6 @@
     <p>{{timeLeft}} Seconds</p>
 </mat-spinner> <p>{{timeLeft}} Seconds</p> -->
 
-
 <div *ngIf="isSubmit == false">
     <div  class="container pt-3 cont7788">
         <section class="div788">
@@ -36,9 +35,9 @@
                 <mat-card  *ngIf="node.status == true">
 
                    
-                  <span>
+                  <div>
                     <b class="mx-2"> {{ i+1 }} )</b> <b [innerHTML]="node.question" ></b>
-                  </span>
+                  </div>
     
                    <div *ngIf="node.questionFiles != ''">
                         <div *ngFor="let qf of node.questionFiles; let i = index">

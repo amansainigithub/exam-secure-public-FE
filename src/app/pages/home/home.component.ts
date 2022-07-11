@@ -35,7 +35,6 @@ export class HomeComponent implements OnInit {
     this._bs.getBranchList().subscribe(data=>{
       this.branchList = data;
       console.log(data);
-      console.log(data);
       
     },error=>{
       console.log(error);
